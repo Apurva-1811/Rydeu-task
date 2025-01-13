@@ -1,0 +1,40 @@
+.card-section {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to prevent overlap */
+  gap: 2rem; /* Space between cards */
+  justify-content: space-between;
+  margin: 1rem 0;
+  width: 100%;
+  
+}
+
+.card {
+  flex: 1 1 calc(100%); /* Take 50% width minus gap */
+  max-width: calc(100%); /* Restrict max width */
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem; /* Add padding for content spacing */
+}
+
+.card-icon {
+  font-size: 2rem;
+  color: #fd2e5a;
+}
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+  .card {
+    flex: 1 1 calc(50% - 1rem); /* Two cards per row */
+    max-width: calc(50% - 1rem);
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 100%; /* Full-width cards on mobile */
+    max-width: 100%;
+  }
+}

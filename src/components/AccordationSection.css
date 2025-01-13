@@ -1,0 +1,93 @@
+.accordion-section .header-content {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center; /* Align icon and text vertically */
+    gap: 30px; /* Space between icon and title */
+  }
+  
+  .accordion-section .header-content .icon {
+    font-size: 2rem;
+    color: #fd2e5a;
+  }
+  
+  .accordion-section .header-content .title {
+    
+    font-size: 1.3rem; /* Adjust title size */
+  }
+  .chat-icons {
+    display: flex;
+    gap: 1px;
+    margin-top: 0px;
+  }
+  
+  .chat-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .chat-icon:hover {
+    color: #007bff; /* Highlight color on hover */
+  }
+  .social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .social-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .social-icon:hover {
+    color: #007bff; /* Highlight color on hover */
+  }
+  .query-form {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .form-control {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .query-textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #e03e00;
+  }
+  
+  
+  
