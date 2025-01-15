@@ -1,35 +1,39 @@
 .card-section {
-  display: flex; /* Align cards in a single row */
+  display: flex; /* Align cards in a row */
   gap: 2rem; /* Space between cards */
   justify-content: space-between; /* Distribute cards evenly */
   margin: -10rem 0 1rem 0; /* Adjust as needed for overlap */
   width: 100%;
   position: relative;
   z-index: 10;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 .card {
   display: flex; /* Align icon and content horizontally */
-  /* Center-align icon and content */
   
-  gap: 10px;
+  gap: 1rem; /* Space between icon and content */
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 1rem;
-  width: calc(50% - 1rem); /* Ensure two cards fit in a single row */
+  width: calc(50% - 1rem); /* Two cards per row on larger screens */
   box-sizing: border-box;
+  transition: all 0.3s ease; /* Smooth scaling for hover effect */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Add a hover effect */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
 }
 
 .card-icon {
   display: flex;
   
   
-  flex-shrink: 0; 
-  
+  flex-shrink: 0; /* Prevent the icon from shrinking */
   font-size: 2rem;
   color: #fd2e5a;
-  margin-right: 1rem; /* Space between icon and content */
 }
 
 .card-content {
@@ -39,38 +43,52 @@
 }
 
 .card-title {
-  
   font-size: 1.25rem;
   font-weight: bold;
-  margin-bottom: 0.5rem; /* Space between title and description */
+  margin: 0; /* Remove extra margins */
 }
 
 .card-description {
   font-size: 1rem;
   color: #666;
+  margin-top: 0.25rem; /* Small spacing between title and description */
 }
 
-/* Responsive Adjustments */
+/* Responsive Adjustments for Tablet Screens */
 @media (max-width: 1024px) {
-  .card-section {
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  .card {
+    width: calc(50% - 1rem); /* Two cards per row for tablets */
   }
 
-  .card {
-    width: 100%; /* Full-width cards on smaller screens */
+  .card-section {
+    gap: 1rem; /* Reduce gap for smaller screens */
   }
 }
 
+/* Responsive Adjustments for Mobile Screens */
 @media (max-width: 768px) {
   .card {
-    flex-wrap: wrap;
-    flex-direction: column; /* Stack icon and content vertically */
-    align-items: center;
+    flex-direction: row; /* Keep icon and content horizontally aligned */
+    align-items: flex-start; /* Align items at the top */
+    width: 100%; /* Full-width cards on mobile */
   }
 
   .card-icon {
-    margin-right: 0;
-    margin-bottom: 0.5rem;
+    
+    align-items: flex-start; /* Align text to the left */
+    text-align: left; /* Maintain space between icon and text */
+  }
+
+  .card-content {
+     /* Ensure text aligns properly */
+  }
+
+  .card-title {
+    font-size: 1.1rem; /* Adjust title size for smaller screens */
+  }
+
+  .card-description {
+    font-size: 0.9rem; /* Adjust description size for smaller screens */
   }
 }
 
