@@ -1,73 +1,134 @@
 .header {
-    background: linear-gradient(to bottom, #e6f7ff, #ffffff);
-    padding: 0;
-  }
-  
-  .navbar {
-    background-color: #fff;
-    height: 78px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    
-  }
-  .navbar .logo{
-    padding-left: 2rem;
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    color: #FD2E5A;
+  background-image: url("/pic1.png"); /* Background image for pic1 */
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-repeat: no-repeat; /* Prevents repeating the image */
+  background-position: center; /* Centers the image */
+  height: 60vh; /* Full viewport height */
+  padding: 0;
+  position: relative; /* Make it a positioned element */
+  z-index: 2; /* Layer it above pic2 */
+  overflow: hidden;
+}
 
-    width: 86px;
+.pic2 {
+  background-image: url("/pic2.png"); /* Background image for pic2 */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 55vh; /* Adjust height based on your design */
+  padding: 0;
+  position: absolute; /* Allow it to overlap with .header */
+  top: 0; /* Adjust the position as needed */
+  left: 0;
+  width: 100%;
+  /* opacity: 0.7; */
+  z-index: 1; /* Layer it below pic1 */
+}
+.header-content {
+  position: relative; /* Ensure it layers above pic2 */
+  z-index: 2; /* Layer it above pic2 */
+  text-align: center;
+  padding: 5rem 1rem;
+  color: #fff; /* White text for contrast */
+}
+
+.navbar {
+  background-color: #fff;
+  height: 78px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 3;
+}
+
+.navbar .logo {
+  padding-left: 2rem;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: #FD2E5A;
+  width: 86px;
   height: 36px;
   font-size: 1.5rem;
+}
+
+.nav-options {
+  display: flex;
+  align-items: center;
+  padding-right: 2rem;
+}
+
+.nav-options span {
+  margin-left: 1rem;
+  font-size: 0.9rem;
+}
+
+.header-content {
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.header-content h1 {
+  font-size: 2.5rem;
+  color: #2b3056;
+}
+
+.header-content p {
+  font-size: 1rem;
+  color: #201b1b;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .header-content h1 {
+    font-size: 2rem; /* Adjust font size for smaller screens */
   }
-  
-  .nav-options {
-    display: flex;
-    align-items: center;
-    padding-right: 2rem;
-  }
-  
-  .nav-options span {
-    margin-left: 1rem;
+
+  .header-content p {
     font-size: 0.9rem;
   }
-  
-  .header-content {
-    text-align: center;
-    padding: 5rem 1rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem; /* Adjust padding for smaller screens */
   }
-  
+
+  .nav-options {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .header-content h1 {
-    font-size: 2.5rem;
-    color: #2b3056;
+    font-size: 1.8rem; /* Adjust header size */
   }
-  
+
   .header-content p {
-    font-size: 1rem;
-    color: #201b1b;
+    font-size: 0.85rem; /* Adjust paragraph font size */
   }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-    }
-  
-    .nav-options {
-      margin-top: 1rem;
-      flex-wrap: wrap;
-    }
-  
-    .header-content h1 {
-      font-size: 2rem;
-    }
-  
-    .header-content p {
-      font-size: 0.9rem;
-    }
+
+  .header {
+    height: auto; /* Allow height to adjust dynamically */
+    min-height: 60vh; /* Ensure the header has a minimum height */
   }
-  
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.5rem;
+  }
+
+  .header-content h1 {
+    font-size: 1.5rem; /* Adjust further for very small screens */
+  }
+
+  .header-content p {
+    font-size: 0.8rem;
+  }
+}

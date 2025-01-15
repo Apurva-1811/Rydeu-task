@@ -4,6 +4,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <header className="header">
+      <div className="pic2"></div> {/* Background for pic2 */}
       <nav className="navbar">
         <div className="logo">LOGO</div>
         <div className="nav-options">
@@ -27,3 +28,4 @@ const Header = () => {
 };
 
 export default Header;
+

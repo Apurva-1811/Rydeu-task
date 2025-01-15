@@ -10,9 +10,18 @@ const AccordionSection = () => {
       title: "Chat",
       content: (
         <div className="chat-icons">
-          <FaTelegramPlane title="Telegram" className="chat-icon" />
-          <FaWhatsapp title="WhatsApp" className="chat-icon" />
-          <FaCommentDots title="Live Chat" className="chat-icon" />
+          <div className="icon-label">
+            <FaTelegramPlane title="Telegram" className="chat-icon telegram-icon" />
+            <span className="icon-text">Telegram</span>
+          </div>
+          <div className="icon-label">
+            <FaWhatsapp title="WhatsApp" className="chat-icon whatsapp-icon" />
+            <span className="icon-text">WhatsApp</span>
+          </div>
+          <div className="icon-label">
+            <FaCommentDots title="Live Chat" className="chat-icon livechat-icon" />
+            <span className="icon-text">Live Chat</span>
+          </div>
         </div>
       ),
     },
@@ -21,10 +30,22 @@ const AccordionSection = () => {
       title: "Social",
       content: (
         <div className="social-icons">
-          <FaTelegramPlane title="Telegram" className="social-icon" />
-          <FaInstagram title="Instagram" className="social-icon" />
-          <FaTwitter title="Twitter" className="social-icon" />
-          <FaLinkedin title="LinkedIn" className="social-icon" />
+          <div className="icon-label">
+            <FaTelegramPlane title="Telegram" className="social-icon telegram-icon" />
+            <span className="icon-text">Telegram</span>
+          </div>
+          <div className="icon-label">
+            <FaInstagram title="Instagram" className="social-icon instagram-icon" />
+            <span className="icon-text">Instagram</span>
+          </div>
+          <div className="icon-label">
+            <FaTwitter title="Twitter" className="social-icon twitter-icon" />
+            <span className="icon-text">Twitter</span>
+          </div>
+          <div className="icon-label">
+            <FaLinkedin title="LinkedIn" className="social-icon linkedin-icon" />
+            <span className="icon-text">LinkedIn</span>
+          </div>
         </div>
       ),
     },
@@ -35,14 +56,29 @@ const AccordionSection = () => {
         <form className="query-form">
           <div className="form-group">
             <div className="form-row">
-              <input type="text" placeholder="Name" className="form-control" />
-              <input type="email" placeholder="Email" className="form-control" />
+              <div className="form-control">
+                <label htmlFor="name">Name</label>
+                <input type="text" id="name" />
+              </div>
+              <div className="form-control">
+                <label htmlFor="email">Email</label>
+                <input type="email" id="email" />
+              </div>
             </div>
             <div className="form-row">
-              <input type="text" placeholder="Subject" className="form-control" />
-              <input type="text" placeholder="Order no." className="form-control" />
+              <div className="form-control">
+                <label htmlFor="subject">Subject</label>
+                <input type="text" id="subject" />
+              </div>
+              <div className="form-control">
+                <label htmlFor="orderNo">Order no.</label>
+                <input type="text" id="orderNo" />
+              </div>
             </div>
-            <textarea placeholder="Your Query" className="form-control query-textarea"></textarea>
+            <div className="form-control textarea-control">
+              <label htmlFor="query" className="textarea-label">Your Query</label>
+              <textarea id="query"></textarea>
+            </div>
           </div>
           <button type="submit" className="submit-button">Submit</button>
         </form>
@@ -70,5 +106,3 @@ const AccordionSection = () => {
 };
 
 export default AccordionSection;
-
-

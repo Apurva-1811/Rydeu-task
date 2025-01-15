@@ -1,40 +1,76 @@
 .card-section {
-  display: flex;
-  flex-wrap: wrap; /* Allow wrapping to prevent overlap */
+  display: flex; /* Align cards in a single row */
   gap: 2rem; /* Space between cards */
-  justify-content: space-between;
-  margin: 1rem 0;
+  justify-content: space-between; /* Distribute cards evenly */
+  margin: -10rem 0 1rem 0; /* Adjust as needed for overlap */
   width: 100%;
-  
+  position: relative;
+  z-index: 10;
 }
 
 .card {
-  flex: 1 1 calc(100%); /* Take 50% width minus gap */
-  max-width: calc(100%); /* Restrict max width */
-  text-align: center;
+  display: flex; /* Align icon and content horizontally */
+  /* Center-align icon and content */
+  
+  gap: 10px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 1rem; /* Add padding for content spacing */
+  padding: 1rem;
+  width: calc(50% - 1rem); /* Ensure two cards fit in a single row */
+  box-sizing: border-box;
 }
 
 .card-icon {
+  display: flex;
+  
+  
+  flex-shrink: 0; 
+  
   font-size: 2rem;
   color: #fd2e5a;
+  margin-right: 1rem; /* Space between icon and content */
 }
 
-/* Tablet screens */
+.card-content {
+  display: flex;
+  flex-direction: column; /* Stack title and description vertically */
+  justify-content: center;
+}
+
+.card-title {
+  
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* Space between title and description */
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
+  .card-section {
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  }
+
   .card {
-    flex: 1 1 calc(50% - 1rem); /* Two cards per row */
-    max-width: calc(50% - 1rem);
+    width: 100%; /* Full-width cards on smaller screens */
   }
 }
 
-/* Mobile screens */
 @media (max-width: 768px) {
   .card {
-    flex: 1 1 100%; /* Full-width cards on mobile */
-    max-width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column; /* Stack icon and content vertically */
+    align-items: center;
+  }
+
+  .card-icon {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
   }
 }
+
